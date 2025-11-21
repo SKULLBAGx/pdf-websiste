@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Reader Bot</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-icon">📄</div>
+            <h1 class="hero-title">PDF Reader Bot</h1>
+            <p class="hero-subtitle">Your intelligent document companion</p>
+            <div class="hero-badge">Now Available</div>
+        </section>
+
+        <!-- Current Features -->
+        <section class="features">
+            <h2 class="section-title">✨ Current Features</h2>
+
+            <div class="feature-card">
+                <div class="feature-icon">📖</div>
+                <h3>Page-by-Page Reading</h3>
+                <p>Navigate through your PDFs with intuitive controls. Swipe or tap to move between pages effortlessly.
+                </p>
+                <div class="feature-tags">
+                    <span class="tag">Navigation</span>
+                    <span class="tag">Interactive</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📑</div>
+                <h3>View All Pages</h3>
+                <p>Switch to album mode to see all pages at once. Perfect for quick browsing and overview.</p>
+                <div class="feature-tags">
+                    <span class="tag">Album Mode</span>
+                    <span class="tag">Quick View</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Jump to Page</h3>
+                <p>Instantly jump to any page number. No more endless scrolling to find what you need.</p>
+                <div class="feature-tags">
+                    <span class="tag">Fast Access</span>
+                    <span class="tag">Efficient</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">✏️</div>
+                <h3>Auto-Rename</h3>
+                <p>Documents are automatically renamed using their metadata for better organization.</p>
+                <div class="feature-tags">
+                    <span class="tag">Smart</span>
+                    <span class="tag">Organized</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Clean Interface</h3>
+                <p>Minimalist design with auto-cleanup. Messages disappear when not needed.</p>
+                <div class="feature-tags">
+                    <span class="tag">Minimal</span>
+                    <span class="tag">Clean</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Features -->
+        <section class="upcoming">
+            <h2 class="section-title">🚀 Coming Soon</h2>
+
+            <div class="upcoming-grid">
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">📝</div>
+                    <h4>Word Documents</h4>
+                    <p>Read .docx files</p>
+                </div>
+
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">📊</div>
+                    <h4>Excel Sheets</h4>
+                    <p>View spreadsheets</p>
+                </div>
+
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">📈</div>
+                    <h4>PowerPoint</h4>
+                    <p>Browse presentations</p>
+                </div>
+
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">🖼️</div>
+                    <h4>Image Formats</h4>
+                    <p>PNG, JPG, WebP</p>
+                </div>
+
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">📚</div>
+                    <h4>EPUB Books</h4>
+                    <p>Read e-books</p>
+                </div>
+
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">🔐</div>
+                    <h4>Password Protected</h4>
+                    <p>Secure PDFs</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Pricing Section -->
+        <section class="pricing">
+            <h2 class="section-title">💎 Unlock Premium</h2>
+            <p class="pricing-subtitle">Get access to all upcoming features and priority support</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Best Value</div>
+                    <div class="pricing-icon">⭐</div>
+                    <h3>Lifetime Access</h3>
+                    <div class="pricing-amount">
+                        <span class="currency">$</span>
+                        <span class="price">30</span>
+                    </div>
+                    <p class="pricing-period">One-time payment</p>
+                    <ul class="pricing-features">
+                        <li>✅ All current features</li>
+                        <li>✅ All upcoming features</li>
+                        <li>✅ Priority support</li>
+                        <li>✅ Lifetime updates</li>
+                        <li>✅ No recurring fees</li>
+                    </ul>
+                    <button class="pricing-button premium" id="buyLifetime">Get Lifetime Access</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-icon">📅</div>
+                    <h3>Monthly Plan</h3>
+                    <div class="pricing-amount">
+                        <span class="currency">$</span>
+                        <span class="price">1</span>
+                    </div>
+                    <p class="pricing-period">Per month</p>
+                    <ul class="pricing-features">
+                        <li>✅ All current features</li>
+                        <li>✅ All upcoming features</li>
+                        <li>✅ Priority support</li>
+                        <li>✅ Cancel anytime</li>
+                        <li>✅ Flexible billing</li>
+                    </ul>
+                    <button class="pricing-button" id="buyMonthly">Subscribe Monthly</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <h2>Ready to Get Started?</h2>
+            <p>Send any PDF to the bot and start reading instantly!</p>
+            <button id="openBot" class="cta-button">Open Bot</button>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with ❤️ for Telegram</p>
+            <p class="version">v1.0.0</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
