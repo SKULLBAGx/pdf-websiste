@@ -10,6 +10,15 @@
 </head>
 
 <body>
+    <!-- Matrix Theme Toggle Button -->
+    <button id="matrixToggle" class="matrix-toggle" title="Toggle Matrix Theme">
+        <span class="toggle-icon">🕶️</span>
+        <span class="toggle-text">Matrix Mode</span>
+    </button>
+
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
+
     <div class="container">
         <!-- Hero Section -->
         <section class="hero">
@@ -23,51 +32,154 @@
         <section class="features">
             <h2 class="section-title">✨ Current Features</h2>
 
-            <div class="feature-card">
-                <div class="feature-icon">📖</div>
-                <h3>Page-by-Page Reading</h3>
-                <p>Navigate through your PDFs with intuitive controls. Swipe or tap to move between pages effortlessly.
-                </p>
+            <div class="feature-card" data-feature="page-reading">
+                <div class="feature-header">
+                    <div>
+                        <div class="feature-icon">📖</div>
+                        <h3>Page-by-Page Reading</h3>
+                    </div>
+                    <span class="expand-arrow">▼</span>
+                </div>
+                <p class="feature-summary">Navigate through your PDFs with intuitive controls. Swipe or tap to move
+                    between pages effortlessly.</p>
+                <div class="feature-details">
+                    <h4>How It Works:</h4>
+                    <ul>
+                        <li><strong>Previous/Next Buttons:</strong> Use the navigation buttons to move backward or
+                            forward one page at a time</li>
+                        <li><strong>Page Counter:</strong> Always know where you are with the current page indicator
+                            (e.g., "Page 5 of 20")</li>
+                        <li><strong>High-Quality Images:</strong> Each page is converted to a clear, readable image for
+                            optimal viewing</li>
+                        <li><strong>Smooth Navigation:</strong> Instant page loading with no lag or delays</li>
+                    </ul>
+                    <h4>Perfect For:</h4>
+                    <p>Reading books, articles, or any document where you want to focus on one page at a time without
+                        distractions.</p>
+                </div>
                 <div class="feature-tags">
                     <span class="tag">Navigation</span>
                     <span class="tag">Interactive</span>
                 </div>
             </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">📑</div>
-                <h3>View All Pages</h3>
-                <p>Switch to album mode to see all pages at once. Perfect for quick browsing and overview.</p>
+            <div class="feature-card" data-feature="view-all">
+                <div class="feature-header">
+                    <div>
+                        <div class="feature-icon">📑</div>
+                        <h3>View All Pages</h3>
+                    </div>
+                    <span class="expand-arrow">▼</span>
+                </div>
+                <p class="feature-summary">Switch to album mode to see all pages at once. Perfect for quick browsing and
+                    overview.</p>
+                <div class="feature-details">
+                    <h4>How It Works:</h4>
+                    <ul>
+                        <li><strong>Album View:</strong> Click "View All" to see thumbnails of every page in your
+                            document</li>
+                        <li><strong>Quick Navigation:</strong> Tap any page thumbnail to jump directly to that page</li>
+                        <li><strong>Visual Overview:</strong> Get a bird's-eye view of your entire document at a glance
+                        </li>
+                        <li><strong>Easy Switching:</strong> Toggle between single-page and album view anytime</li>
+                    </ul>
+                    <h4>Perfect For:</h4>
+                    <p>Finding specific sections quickly, getting an overview of document structure, or browsing through
+                        presentations and image-heavy PDFs.</p>
+                </div>
                 <div class="feature-tags">
                     <span class="tag">Album Mode</span>
                     <span class="tag">Quick View</span>
                 </div>
             </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <h3>Jump to Page</h3>
-                <p>Instantly jump to any page number. No more endless scrolling to find what you need.</p>
+            <div class="feature-card" data-feature="jump-page">
+                <div class="feature-header">
+                    <div>
+                        <div class="feature-icon">🔍</div>
+                        <h3>Jump to Page</h3>
+                    </div>
+                    <span class="expand-arrow">▼</span>
+                </div>
+                <p class="feature-summary">Instantly jump to any page number. No more endless scrolling to find what you
+                    need.</p>
+                <div class="feature-details">
+                    <h4>How It Works:</h4>
+                    <ul>
+                        <li><strong>Direct Input:</strong> Click the "Jump to Page" button and enter your desired page
+                            number</li>
+                        <li><strong>Instant Navigation:</strong> The bot immediately takes you to the exact page you
+                            requested</li>
+                        <li><strong>No Limits:</strong> Jump to any page in your document, whether it's page 1 or page
+                            500</li>
+                        <li><strong>Smart Validation:</strong> The bot ensures you enter a valid page number within the
+                            document range</li>
+                    </ul>
+                    <h4>Perfect For:</h4>
+                    <p>Accessing specific chapters, returning to bookmarked pages, or navigating large documents like
+                        textbooks and manuals efficiently.</p>
+                </div>
                 <div class="feature-tags">
                     <span class="tag">Fast Access</span>
                     <span class="tag">Efficient</span>
                 </div>
             </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">✏️</div>
-                <h3>Auto-Rename</h3>
-                <p>Documents are automatically renamed using their metadata for better organization.</p>
+            <div class="feature-card" data-feature="auto-rename">
+                <div class="feature-header">
+                    <div>
+                        <div class="feature-icon">✏️</div>
+                        <h3>Auto-Rename</h3>
+                    </div>
+                    <span class="expand-arrow">▼</span>
+                </div>
+                <p class="feature-summary">Documents are automatically renamed using their metadata for better
+                    organization.</p>
+                <div class="feature-details">
+                    <h4>How It Works:</h4>
+                    <ul>
+                        <li><strong>Metadata Extraction:</strong> The bot reads the PDF's internal metadata (title,
+                            author, subject)</li>
+                        <li><strong>Smart Naming:</strong> Files are renamed based on the document title or most
+                            relevant metadata</li>
+                        <li><strong>Automatic Process:</strong> Happens instantly when you send a PDF - no manual work
+                            needed</li>
+                        <li><strong>Fallback System:</strong> If no metadata exists, the original filename is preserved
+                        </li>
+                    </ul>
+                    <h4>Perfect For:</h4>
+                    <p>Keeping your document library organized, especially useful for academic papers, ebooks, and
+                        professional documents with proper metadata.</p>
+                </div>
                 <div class="feature-tags">
                     <span class="tag">Smart</span>
                     <span class="tag">Organized</span>
                 </div>
             </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">🎯</div>
-                <h3>Clean Interface</h3>
-                <p>Minimalist design with auto-cleanup. Messages disappear when not needed.</p>
+            <div class="feature-card" data-feature="clean-interface">
+                <div class="feature-header">
+                    <div>
+                        <div class="feature-icon">🎯</div>
+                        <h3>Clean Interface</h3>
+                    </div>
+                    <span class="expand-arrow">▼</span>
+                </div>
+                <p class="feature-summary">Minimalist design with auto-cleanup. Messages disappear when not needed.</p>
+                <div class="feature-details">
+                    <h4>How It Works:</h4>
+                    <ul>
+                        <li><strong>Auto-Cleanup:</strong> Navigation messages and controls automatically delete
+                            themselves after use</li>
+                        <li><strong>Focused Reading:</strong> Only your document pages remain visible in the chat</li>
+                        <li><strong>No Clutter:</strong> The bot removes old navigation panels when you request new
+                            pages</li>
+                        <li><strong>Seamless Experience:</strong> Enjoy a distraction-free reading environment</li>
+                    </ul>
+                    <h4>Perfect For:</h4>
+                    <p>Users who want a clean, uncluttered chat experience without unnecessary messages piling up. Focus
+                        on your content, not the interface.</p>
+                </div>
                 <div class="feature-tags">
                     <span class="tag">Minimal</span>
                     <span class="tag">Clean</span>

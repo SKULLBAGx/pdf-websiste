@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Rename - PDF Reader Bot</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- Matrix Theme Toggle Button -->
+    <button id="matrixToggle" class="matrix-toggle" title="Toggle Matrix Theme">
+        <span class="toggle-icon">🕶️</span>
+        <span class="toggle-text">Matrix Mode</span>
+    </button>
+
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
+
+    <div class="container">
+        <!-- Back Button -->
+        <a href="../index.html" class="back-button">← Back to Features</a>
+
+        <!-- Feature Detail -->
+        <section class="feature-detail">
+            <div class="feature-detail-icon">✏️</div>
+            <h1 class="feature-detail-title">Auto-Rename</h1>
+            <p class="feature-detail-subtitle">Documents are automatically renamed using their metadata</p>
+
+            <div class="detail-section">
+                <h2>How It Works</h2>
+                <ul class="detail-list">
+                    <li><strong>Metadata Extraction:</strong> The bot reads the PDF's internal metadata (title, author,
+                        subject)</li>
+                    <li><strong>Smart Naming:</strong> Files are renamed based on the document title or most relevant
+                        metadata</li>
+                    <li><strong>Automatic Process:</strong> Happens instantly when you send a PDF - no manual work
+                        needed</li>
+                    <li><strong>Fallback System:</strong> If no metadata exists, the original filename is preserved</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h2>Perfect For</h2>
+                <p class="detail-description">Keeping your document library organized, especially useful for academic
+                    papers, ebooks, and professional documents with proper metadata. Saves time and ensures consistent
+                    naming conventions across your collection.</p>
+            </div>
+
+            <div class="detail-tags">
+                <span class="tag">Smart</span>
+                <span class="tag">Organized</span>
+                <span class="tag">Automatic</span>
+            </div>
+        </section>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

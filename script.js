@@ -106,3 +106,109 @@ console.log('PDF Reader Bot Web App loaded');
 console.log('Telegram Web App version:', tg.version);
 console.log('Platform:', tg.platform);
 console.log('Color scheme:', tg.colorScheme);
+
+// ===== EXPANDABLE FEATURE CARDS =====
+
+// Get all feature cards
+const featureCards = document.querySelectorAll('.feature-card[data-feature]');
+
+// Add click event to toggle expansion
+featureCards.forEach(card => {
+    card.addEventListener('click', () => {
+        // Toggle expanded class
+        card.classList.toggle('expanded');
+
+        // Haptic feedback
+        tg.HapticFeedback.impactOccurred('light');
+    });
+});
+
+// ===== MATRIX THEME FUNCTIONALITY =====
+
+// Matrix toggle button
+const matrixToggle = document.getElementById('matrixToggle');
+const canvas = document.getElementById('matrixCanvas');
+const ctx = canvas.getContext('2d');
+
+// Set canvas size
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+// Matrix rain configuration
+const fontSize = 16;
+let columns = canvas.width / fontSize;
+const drops = [];
+
+// Initialize drops
+for (let i = 0; i < columns; i++) {
+    drops[i] = Math.random() * -100;
+}
+
+// Matrix characters
+const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+// Draw matrix rain
+function drawMatrix() {
+    // Semi-transparent black background for trail effect
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Green text
+    ctx.fillStyle = '#00ff41';
+    ctx.font = fontSize + 'px monospace';
+
+    // Draw characters
+    for (let i = 0; i < drops.length; i++) {
+        // Random character
+        const char = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+
+        // Draw character
+        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+
+        // Reset drop to top randomly
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+        }
+
+        // Move drop down
+        drops[i]++;
+    }
+}
+
+// Animation loop
+let matrixInterval = null;
+
+// Toggle Matrix mode
+let isMatrixMode = false;
+
+matrixToggle.addEventListener('click', () => {
+    isMatrixMode = !isMatrixMode;
+    document.body.classList.toggle('matrix-mode');
+
+    // Haptic feedback
+    tg.HapticFeedback.impactOccurred('medium');
+
+    if (isMatrixMode) {
+        // Start matrix rain animation
+        matrixInterval = setInterval(drawMatrix, 50);
+        matrixToggle.querySelector('.toggle-text').textContent = 'Normal Mode';
+    } else {
+        // Stop matrix rain animation
+        clearInterval(matrixInterval);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        matrixToggle.querySelector('.toggle-text').textContent = 'Matrix Mode';
+    }
+});
+
+// Update columns on resize
+window.addEventListener('resize', () => {
+    columns = canvas.width / fontSize;
+    drops.length = 0;
+    for (let i = 0; i < columns; i++) {
+        drops[i] = Math.random() * -100;
+    }
+});

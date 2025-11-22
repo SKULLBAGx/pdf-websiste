@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page-by-Page Reading - PDF Reader Bot</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- Matrix Theme Toggle Button -->
+    <button id="matrixToggle" class="matrix-toggle" title="Toggle Matrix Theme">
+        <span class="toggle-icon">🕶️</span>
+        <span class="toggle-text">Matrix Mode</span>
+    </button>
+
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
+
+    <div class="container">
+        <!-- Back Button -->
+        <a href="../index.html" class="back-button">← Back to Features</a>
+
+        <!-- Feature Detail -->
+        <section class="feature-detail">
+            <div class="feature-detail-icon">📖</div>
+            <h1 class="feature-detail-title">Page-by-Page Reading</h1>
+            <p class="feature-detail-subtitle">Navigate through your PDFs with intuitive controls</p>
+
+            <div class="detail-section">
+                <h2>How It Works</h2>
+                <ul class="detail-list">
+                    <li><strong>Previous/Next Buttons:</strong> Use the navigation buttons to move backward or forward
+                        one page at a time</li>
+                    <li><strong>Page Counter:</strong> Always know where you are with the current page indicator (e.g.,
+                        "Page 5 of 20")</li>
+                    <li><strong>High-Quality Images:</strong> Each page is converted to a clear, readable image for
+                        optimal viewing</li>
+                    <li><strong>Smooth Navigation:</strong> Instant page loading with no lag or delays</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h2>Perfect For</h2>
+                <p class="detail-description">Reading books, articles, or any document where you want to focus on one
+                    page at a time without distractions. Ideal for linear reading experiences where you progress through
+                    content sequentially.</p>
+            </div>
+
+            <div class="detail-tags">
+                <span class="tag">Navigation</span>
+                <span class="tag">Interactive</span>
+                <span class="tag">Sequential Reading</span>
+            </div>
+        </section>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
